@@ -1,0 +1,178 @@
+* {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.main-background {
+    background-image:url(img/iu.jpg);
+    color: white;
+}
+
+.black-background{
+    background: rgba(0, 0, 0, 0);
+    position: fixed;
+    z-index: 5;
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+/* bootstrap z-index 는 1 ~ 4 까지 사용*/
+
+.white-background {
+    background: white;
+    margin: 100px auto;
+    width: 80%;
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.white-background > .modal-close {
+    cursor: pointer;
+}
+
+.nav-menu {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    align-items: center;
+    background-color: transparent;
+    position: fixed;
+    z-index: 4;
+    width: 100%;
+    color: white;
+}
+
+.nav-black {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    align-items: center;
+    background-color: transparent;
+    position: fixed;
+    z-index: 5;
+    width: 100%;
+    background-color: white;
+    color: black;
+}
+
+.large-logo{
+    transition: all 0.5s;
+    font-size: 34px;
+}
+
+.small-logo{
+    transition: all 0.5s;
+    font-size: 24px;
+}
+
+.nav-sub-btn {
+    cursor: pointer;
+}
+
+#nav-sub {
+    display: none;
+}
+
+.alert-email  {
+    display: none;
+    color : red;
+}
+
+.alert-password  {
+    display: none;
+    color : red;
+}
+
+.carousel {
+    overflow: hidden;
+    position: relative;
+}
+
+.next-btn {
+    position: absolute;
+    top: 45%;
+    right: 0;
+}
+
+.prev-btn {
+    z-index: 10;
+    position: absolute;
+    top: 45%;
+    left: 0;
+}
+
+
+.slide-container {
+    width: 300vw;
+    transition: transform 1s;
+    /* transform: translateX(-100vw); */
+    /*X축 이동 시킬때 쓰는 속성*/
+}
+
+.slide-box {
+    width: 100vw;
+    float:left;
+}
+
+/* .slide-box img {
+    width: 100%;
+} */
+
+.img-box1 {
+    background-image: url(./img/apple1.jpg);
+    width: 100vw;
+    height: 40vh;
+}
+
+.img-box2 {
+    background-image: url(./img/apple2.jpg);
+    width: 100vw;
+    height: 40vh;
+}
+
+.img-box3 {
+    background-image: url(./img/apple3.jpg);
+    width: 100vw;
+    height: 40vh;
+}
+
+ul.list {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	border-bottom: 1px solid #ccc;
+  }
+  ul.list::after {
+	content: '';
+	display: block;
+	clear: both;
+  }
+  .tab-button {
+	display: block;
+	padding: 10px 20px 10px 20px;
+	float: left;
+	margin-right: -1px;
+	margin-bottom: -1px;
+	color: grey;
+	text-decoration: none;
+	cursor: pointer;
+  }
+  .active {
+	border-top: 2px solid orange;
+	border-right: 1px solid #ccc;
+	border-bottom: 1px solid white;
+	border-left: 1px solid #ccc;
+	color: black;
+	margin-top: -2px;
+  }
+  .tab-content {
+	display: none;
+	padding: 10px;
+  }
+  .show {
+	display: block;
+  }
+
