@@ -8,6 +8,9 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="main.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.4.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
     <script src="main.js" defer></script>
     <title>HansMedia</title>
   </head>
@@ -36,7 +39,7 @@
 
 
         <div class="nav-menu">
-            <h4 style="margin: 0;">HansMedia</h4>
+            <h4 style="margin: 0;" class="large-logo">HansMedia</h4>
             <a class="nav-sub-btn">Products</a>
         </div>
 
@@ -49,7 +52,7 @@
           </ul>
 
         <div class="jumbotron main-background">
-            <h1 class="display-4">HansMedia</h1>
+            <h1 class="display-1">HansMedia</h1>
             <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
             <hr class="my-4">
             <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
@@ -59,23 +62,111 @@
         <h4 class="my-4 text-center">Showcase</h4>
 
         <div class="carousel">
+          <button class="prev-btn">prev</button>
           <div class="slide-container">
             <div class="slide-box">
-              <img src="img/apple1.jpg">
+              <!-- <img src="img/apple1.jpg"> -->
+              <div class="img-box1"></div>
             </div>
             <div class="slide-box">
-              <img src="img/apple2.jpg">
+              <!-- <img src="img/apple2.jpg"> -->
+              <div class="img-box2"></div>
             </div>
             <div class="slide-box">
-              <img src="img/apple3.jpg">
+              <!-- <img src="img/apple3.jpg"> -->
+              <div class="img-box3"></div>
             </div>
           </div>
+          <button class="next-btn">next</button>
         </div>
         <button class="slide-1">1</button>
         <button class="slide-2">2</button>
         <button class="slide-3">3</button>
-    </div>
 
+        <div class="container mt-5" style="margin-bottom: 500px;">
+          <ul class="list">
+            <li class="tab-button">Products</li>
+            <li class="tab-button active">Information</li>
+            <li class="tab-button">Shipping</li>
+          </ul>
+        
+          <div class="tab-content">
+            <p>상품설명입니다. Product</p>
+          </div>
+          <div class="tab-content show">
+            <p>상품정보입니다. Info</p>
+          </div>
+          <div class="tab-content">
+            <p>배송정보입니다. Shipping</p>
+          </div>
+        </div>
+    </div>
+    <script type="text/JavaScript" defer>
+
+      $('.slide-2').click(function () {
+        $('.slide-container').css('transform','translateX(-100vw)');
+      })
+
+      $('.slide-3').click(function () {
+        $('.slide-container').css('transform','translateX(-200vw)');
+      })
+
+      $('.slide-1').click(function () {
+        $('.slide-container').css('transform','translateX(0)');
+      })
+
+      let now = 1
+      
+      $('.next-btn').click(function () {
+        $('.slide-container').css('transform',`translateX(-${now}00vw)`);
+        if (now < $('.slide-box').length) {
+          now += 1;
+        }
+        console.log(now);
+      })
+
+      $('.prev-btn').click(function () {
+        $('.slide-container').css('transform',`translateX(-${now-2}00vw)`);
+        if (now > 1) {
+          now -= 1;
+        }
+      })
+
+      // for(let i=0; i< $('.tab-button').length; i++ ) {
+      //   $('.tab-button').eq(i).click(function() {
+      //     $('.tab-content').removeClass('show');
+      //     $('.tab-button').removeClass('active');
+      //     $('.tab-button').eq(i).addClass('active');
+      //     $('.tab-content').eq(i).addClass('show');
+      //   })
+      // }
+
+      // $('.next-btn').click(function () {
+        //   if(now == 1 ) {
+          //     $('.slide-container').css('transform',`translateX(-100vw)`);
+          //     now = 2;
+          //   } else if (now == 2) {
+            //     $('.slide-container').css('transform','translateX(-200vw)');
+            //     now = 3;
+            //   } else {
+              //     $('.slide-container').css('transform','translateX(00vw)');
+              //     now = 1;
+              //   }
+              // })
+      
+      // $('.prev-btn').click(function () {
+        //   if(now == 1 ) {
+          //     $('.slide-container').css('transform','translateX(-200vw)');
+          //     now = 3;
+          //   } else if (now == 3) {
+            //     $('.slide-container').css('transform','translateX(-100vw)');
+            //     now = 2;
+            //   } else {
+              //     $('.slide-container').css('transform','translateX(00vw)');
+              //     now = 1;
+              //   }
+              // })
+              </script>
 
     <!-- Optional JavaScript; choose one of the two! -->
 
